@@ -1,25 +1,43 @@
 #include <stdio.h>
 
 int main(){
-    float x = 0.0, y = 4.0;
-    
-    if (x == 0 && y == 0){
-        printf("Origem");
-    } else if ( x > 0 && y > 0) {
-        printf("Q1");
-    } else if ( x < 0 && y < 0) {
-        printf("Q3");
-    } else if ( x > 0 && y < 0) {
-        printf("Q4");
-    } else if ( x < 0 && y > 0 ) {
-        printf("Q2");
-    } else if (x == 0 && y != 0) {
-        printf("Eixo Y");
-    } else if (x != 0  && y == 0) {
-        printf("Eixo X");
-    } else {
-        printf("Entrada inválida");
+    float a, b, c, temp;
+
+    printf("Digite os valores de A, B e C: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    if (a < b){
+        temp = a;
+        a = b;
+        b = temp;
     }
-    
+
+    if(b < c){
+        temp = b;
+        b = c;
+        c = temp;
+    }
+
+    if (a < b){
+        temp = a;
+        a = b;
+        b = temp;
+    }
+
+    if (a >= (b + c)){
+        printf("NAO FORMA TRIANGULO\n");
+        return 0;
+    } if ((a*a) == (b*b) + (c*c)){
+        printf("TRIANGULO RETANGULO\n");
+    } if ((a*a) > ((b*b) + (c*c))){
+        printf("TRIANGULO OBTUSANGULO\n");
+    } if ((a*a) < ((b*b) + (c*c))){
+        printf("TRIANGULO ACUTANGULO\n");
+    } if (a == b && b == c){
+        printf("TRIANGULO EQUILATERO\n");
+    } if ((a == b || b == c) && (a != b || b != c || a != c)){
+        printf("TRIANGULO ISOSCELES\n");
+    }
+
     return 0;
 }
