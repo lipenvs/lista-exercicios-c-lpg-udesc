@@ -1,1 +1,1 @@
-# lista-exercicios-c-lpg-udesc
+# Lista de exercícios da matéria LPG da UDESC
